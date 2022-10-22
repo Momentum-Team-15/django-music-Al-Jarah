@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    birthday = models.DateField(blank=True, null=True)
+    pass
 
 
 class Album(models.Model):
@@ -14,7 +14,7 @@ class Album(models.Model):
     # on (many=more than one)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    
     def __str__(self):
         return f"{self.title} by {self.artist}"
 
@@ -24,4 +24,3 @@ class Artist(models.Model):
 
     def __str__(self):
         return f"{self.name}"
-    

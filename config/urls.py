@@ -20,5 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
     path('__debug__/', include('debug_toolbar.urls')),
-    path('', views.index, name='home')
+    path('', views.index, name='home'),
+    path('album/create', views.create_album, name='create_album'),
+    path('album/<int:pk>', views.album_detail, name='album_detail'),
+    path('album/<int:pk>/edit/', views.album_edit, name='details_edit'),
 ]

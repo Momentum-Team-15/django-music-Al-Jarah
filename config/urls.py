@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from myMusic import views
+from django.conf.urls.static import static
 from myMusic.views import Cover
 urlpatterns = [
     path('admin/', admin.site.urls),

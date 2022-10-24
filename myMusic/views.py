@@ -30,8 +30,10 @@ def album_edit(request, pk):
     if request.method == "POST":
         form = AlbumForm(request.POST)
         if form.is_valid():
+            album = form.save(commit=False)
             album = form.save()
             return redirect('album_detail', pk=album.pk)
     else:
         form = AlbumForm(instance=Album)
     return render(request, 'myMusic/album_edit.html', {'form': form})
+

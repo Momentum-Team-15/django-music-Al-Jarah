@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import ListView
 from .models import Album
 from .forms import AlbumForm
 
@@ -43,6 +44,7 @@ def delete_album(request, pk):
         album.delete()
         return redirect("home")
     return render(request, "music/delete_album.html")
+
 
 class Cover(ListView):
     model = Album

@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>This is my Album Detail page called album_detail.html</h2>
+    <h2>This is my Album Detail page</h2>
     {% if album.cover %}
-<img class="album-images" src="{{ album.cover.url }}">
-{% else %}
-<p> No image provided.</p>
+    <img class="album-images" src="{{ album.cover.url }}">
+    {% else %}
+    <p> No image provided.</p>
 {% endif %}
-   <p>{{ album.title }}</p> 
+   <p>Album: {{ album.title }}</p> 
 
-   <p>{{ album.artist }}</p> 
-    <h2><a href="{% url 'album_edit' pk=album.pk%}">Edit</h2>
+   <p>Artist: {{ album.artist }}</p> 
+   <h2><a href="{% url 'album_edit' pk=album.pk%}">Edit</h2>
 {% endblock %}

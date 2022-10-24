@@ -2,7 +2,11 @@
 
 {% block content %}
     <h2>This is my Album Detail page called album_detail.html</h2>
-
+    {% if album.cover %}
+<img class="album-images" src="{{ album.cover.url }}">
+{% else %}
+<p> No image provided.</p>
+{% endif %}
    <p>{{ album.title }}</p> 
 
    <p>{{ album.artist }}</p> 

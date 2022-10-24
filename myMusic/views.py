@@ -37,3 +37,13 @@ def album_edit(request, pk):
         form = AlbumForm(instance=Album)
     return render(request, 'myMusic/album_edit.html', {'form': form})
 
+def delete_album(request, pk):
+    album = get_object_or_404(Album, pk=pk)
+    if request.method == "POST":
+        album.delete()
+        return redirect("home")
+    return render(request, "music/delete_album.html")
+
+class Cover(ListView):
+    model = Album
+    template_name = "base.html"
